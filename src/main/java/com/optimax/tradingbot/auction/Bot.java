@@ -5,12 +5,20 @@ import com.optimax.tradingbot.strategy.BidStrategy;
 public class Bot implements Bidder {
     private Player own;
     private Player other;
-    private BidStrategy strategy;
-    private BotService botService;
+    private final BidStrategy strategy;
+    private final BotService botService;
 
     public Bot(BidStrategy strategy, BotService botService) {
         this.strategy = strategy;
         this.botService = botService;
+    }
+
+    public Player getOwn() {
+        return own;
+    }
+
+    public Player getOther() {
+        return other;
     }
 
     @Override
@@ -25,7 +33,7 @@ public class Bot implements Bidder {
     }
 
     @Override
-    public void bids(int ownCash, int otherCash) {
-        botService.doBids(ownCash, otherCash, own, other);
+    public void bids(int own, int other) {
+        botService.doBids(own, other, this.own, this.other);
     }
 }

@@ -1,8 +1,6 @@
-package com.optimax.tradingbot;
+package com.optimax.tradingbot.strategy;
 
 import com.optimax.tradingbot.auction.Player;
-import com.optimax.tradingbot.strategy.RandomBidStrategy;
-import com.optimax.tradingbot.strategy.BidStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
