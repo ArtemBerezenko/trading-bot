@@ -2,6 +2,7 @@ package com.optimax.tradingbot.auction;
 
 import com.optimax.tradingbot.strategy.BidStrategy;
 import com.optimax.tradingbot.strategy.RandomBidStrategy;
+import com.optimax.tradingbot.strategy.SmartBidStrategy;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -48,7 +49,8 @@ class BotTest {
     
     private static Stream<Arguments> getStrategies() {
         return Stream.of(
-                Arguments.of(new RandomBidStrategy())
+                Arguments.of(new RandomBidStrategy()),
+                Arguments.of(new SmartBidStrategy())
         );
     }
 
